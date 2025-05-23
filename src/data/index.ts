@@ -895,7 +895,6 @@ export const airlines: Airline[] = [
         height: 9.8,
         unit: "in",
       },
-      metric: null,
     },
   },
   {
