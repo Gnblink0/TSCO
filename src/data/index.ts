@@ -518,7 +518,7 @@ export const airlines: Airline[] = [
   },
   {
     id: "air-china",
-    country: "China(Taiwan)",
+    country: "China",
     name: "Air China",
     baggagePolicyUrl: "https://www.airchina.us/US/GB/info/carry-on-baggage/",
     carryOn: {

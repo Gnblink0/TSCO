@@ -1,23 +1,12 @@
 import { DataGrid, type GridRenderCellParams } from "@mui/x-data-grid";
-import { airlines } from "./data";
 import type { Airline, Dimension } from "./types";
+import { columnWidths, tableWidth } from "./TableUtils";
 
 // calculate total height of the table
 // const singleRowHeight = 52;
 // const headerHeight = 56;
 // const rowCount = airlines.length;
 // const totalHeight = singleRowHeight * rowCount + headerHeight;
-
-const columnWidths = {
-  country: 130,
-  name: 180,
-  carryOnImperial: 150,
-  carryOnMetric: 180,
-  personalItemImperial: 150,
-  personalItemMetric: 150,
-};
-
-const tableWidth = Object.values(columnWidths).reduce((acc, width) => acc + width, 0);
 
 const formatDimension = (dimension: Dimension | undefined): string => {
   if (!dimension) return "-";
@@ -31,18 +20,18 @@ const renderCellWithSourceUrl = (value: Dimension, row: Airline) => {
   const text = formatDimension(value);
   const sourceUrl = row.carryOn?.sourceUrl;
 
-        return sourceUrl ? (
-          <a
-            href={sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
-          >
-            {text}
-          </a>
-        ) : (
-          text
-        );
+  return sourceUrl ? (
+    <a
+      href={sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-600 hover:underline"
+    >
+      {text}
+    </a>
+  ) : (
+    text
+  );
 };
 
 const columns = [
@@ -52,15 +41,14 @@ const columns = [
     headerName: "Airline",
     width: columnWidths.name,
     renderCell: (params: any) => {
-      
       const policyUrl = params.row.baggagePolicyUrl;
       return policyUrl ? (
-      <a
-        href={policyUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-600 hover:underline"
-      >
+        <a
+          href={policyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:underline"
+        >
           {params.value}
         </a>
       ) : (
@@ -120,19 +108,27 @@ const columnGroupingModel = [
   },
 ];
 
-const Table = () => {
+interface TableProps {
+  data: Airline[];
+}
+
+const Table = ({ data }: TableProps) => {
   return (
     <div style={{ width: tableWidth }}>
+      <div className="flex justify-between items-center bg-primary-100 p-2 p text-primary rounded-t-lg">
+        <div>Total Airlines: {data.length}</div>
+        <div>Last Updated: {new Date().toLocaleDateString()}</div>
+      </div>
       <DataGrid
-        rows={airlines}
+        rows={data}
         columns={columns}
         columnGroupingModel={columnGroupingModel}
-        hideFooterPagination={true}
-        hideFooterSelectedRowCount
+        hideFooter
+        autoHeight
         sx={{
           fontSize: "14px",
           "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: "#f5f5f5",
+            backgroundColor: "#f0f0f0",
             color: "#333",
             fontWeight: "bold",
           },
@@ -145,7 +141,7 @@ const Table = () => {
             },
           },
           "& .MuiDataGrid-row:hover": {
-            backgroundColor: "#fafafa",
+            backgroundColor: "#efefef",
           },
         }}
       />
