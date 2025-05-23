@@ -10,6 +10,9 @@ import type { Airline, Dimension } from "./types";
 
 const formatDimension = (dimension: Dimension | undefined): string => {
   if (!dimension) return "-";
+  if (dimension.isLinear) {
+    return `${dimension.linearValue} ${dimension.unit} in Linear`;
+  }
   return `${dimension.length} x ${dimension.width} x ${dimension.height} ${dimension.unit}`;
 };
 

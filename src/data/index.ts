@@ -231,7 +231,8 @@ export const airlines: Airline[] = [
     id: "air-transat",
     country: "Canada",
     name: "Air Transat",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://www.airtransat.com/en-CA/travel-information/baggage/weight-dimensions",
     carryOn: {
       imperial: {
         length: 21.5,
@@ -265,7 +266,7 @@ export const airlines: Airline[] = [
     id: "central-mountain-air",
     country: "Canada",
     name: "Central Mountain Air",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl: "https://www.flycma.com/terms-conditions/#baggage",
     carryOn: {
       imperial: {
         length: 21.5,
@@ -299,7 +300,7 @@ export const airlines: Airline[] = [
     id: "flair-airlines",
     country: "Canada",
     name: "Flair Airlines",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl: "https://www.flyflair.com/travel-info/baggage",
     carryOn: {
       imperial: {
         length: 21.5,
@@ -333,7 +334,7 @@ export const airlines: Airline[] = [
     id: "pacific-coastal-airlines",
     country: "Canada",
     name: "Pacific Coastal Airlines",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl: "https://www.pacificcoastal.com/carry-on/",
     carryOn: {
       imperial: {
         length: 21.5,
@@ -367,7 +368,8 @@ export const airlines: Airline[] = [
     id: "porter-airlines",
     country: "Canada",
     name: "Porter Airlines",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://www.flyporter.com/en-ca/customer-service/faq/seats-and-baggage",
     carryOn: {
       imperial: {
         length: 21.5,
@@ -401,17 +403,17 @@ export const airlines: Airline[] = [
     id: "westjet---encore",
     country: "Canada",
     name: "WestJet - Encore",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl: "https://www.westjet.com/en-ca/baggage/carry-on",
     carryOn: {
       imperial: {
-        length: 21.0,
-        width: 15.0,
+        length: 22.0,
+        width: 14.0,
         height: 9.0,
         unit: "in",
       },
       metric: {
-        length: 53.0,
-        width: 38.0,
+        length: 56.0,
+        width: 36.0,
         height: 23.0,
         unit: "cm",
       },
@@ -435,7 +437,7 @@ export const airlines: Airline[] = [
     id: "westjet---sunwing-airlines",
     country: "Canada",
     name: "WestJet - Sunwing Airlines",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl: "https://www.sunwing.ca/en/sunwing-airlines/baggage-info",
     carryOn: {
       imperial: {
         length: 20.0,
@@ -469,17 +471,17 @@ export const airlines: Airline[] = [
     id: "westjet-airlines",
     country: "Canada",
     name: "WestJet Airlines",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl: "https://www.westjet.com/en-ca/baggage/carry-on",
     carryOn: {
       imperial: {
-        length: 21.0,
-        width: 15.0,
+        length: 22.0,
+        width: 14.0,
         height: 9.0,
         unit: "in",
       },
       metric: {
-        length: 53.0,
-        width: 38.0,
+        length: 56.0,
+        width: 36.0,
         height: 23.0,
         unit: "cm",
       },
@@ -501,9 +503,9 @@ export const airlines: Airline[] = [
   },
   {
     id: "air-china",
-    country: "China",
+    country: "China(Taiwan)",
     name: "Air China",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl: "https://www.airchina.us/US/GB/info/carry-on-baggage/",
     carryOn: {
       imperial: {
         length: 22.0,
@@ -523,12 +525,13 @@ export const airlines: Airline[] = [
     id: "beijing-capital-airlines",
     country: "China",
     name: "Beijing Capital Airlines",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://www.hainanairlines.com/HUPortal/dyn/portal/DisplayPage?LANGUAGE=GB&COUNTRY_SITE=CA&SITE=CBHZCBHZ&PAGE=CABA",
     carryOn: {
       imperial: {
-        length: 21.6,
-        width: 15.7,
-        height: 7.8,
+        length: 22.0,
+        width: 16.0,
+        height: 8.0,
         unit: "in",
       },
       metric: {
@@ -543,7 +546,8 @@ export const airlines: Airline[] = [
     id: "china-eastern",
     country: "China",
     name: "China Eastern",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://www.ceair.com/global/en_static/Announcement/BaggageService/CarryonBaggage/",
     carryOn: {
       imperial: {
         length: 22.0,
@@ -563,7 +567,8 @@ export const airlines: Airline[] = [
     id: "china-southern",
     country: "China",
     name: "China Southern",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://www.csair.com/en/tourguide/luggage_service/carryon_luggage/carry-on/",
     carryOn: {
       imperial: {
         length: 22.0,
@@ -583,18 +588,17 @@ export const airlines: Airline[] = [
     id: "china-southern---xiamen-airlines",
     country: "China",
     name: "China Southern - Xiamen Airlines",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://www.xiamenair.com/brandnew_EN/passenger-service/baggage-claim.html",
     carryOn: {
       imperial: {
-        length: 21.6,
-        width: 15.7,
-        height: 7.8,
+        isLinear: true,
+        linearValue: 45.0,
         unit: "in",
       },
       metric: {
-        length: 55.0,
-        width: 40.0,
-        height: 20.0,
+        isLinear: true,
+        linearValue: 115.0,
         unit: "cm",
       },
     },
@@ -603,7 +607,8 @@ export const airlines: Airline[] = [
     id: "hainan-airlines---domestic",
     country: "China",
     name: "Hainan Airlines - Domestic",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://www.hainanairlines.com/HUPortal/dyn/portal/DisplayPage?COUNTRY_SITE=MX&SITE=CBHZCBHZ&LANGUAGE=GB&PAGE=CABA",
     carryOn: {
       imperial: {
         length: 22.0,
@@ -637,7 +642,20 @@ export const airlines: Airline[] = [
     id: "hainan-airlines---global",
     country: "China",
     name: "Hainan Airlines - Global",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://www.hainanairlines.com/HUPortal/dyn/portal/DisplayPage?COUNTRY_SITE=MX&SITE=CBHZCBHZ&LANGUAGE=GB&PAGE=CABA",
+    carryOn: {
+      imperial: {
+        isLinear: true,
+        linearValue: 45.0,
+        unit: "in",
+      },
+      metric: {
+        isLinear: true,
+        linearValue: 115.0,
+        unit: "cm",
+      },
+    },
     personalItem: {
       imperial: {
         length: 12.0,
@@ -657,14 +675,8 @@ export const airlines: Airline[] = [
     id: "sichuan-airlines",
     country: "China",
     name: "Sichuan Airlines",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl: "https://www.sichuanair.com/carry-on-baggage/",
     carryOn: {
-      imperial: {
-        length: 21.7,
-        width: 15.7,
-        height: 7.9,
-        unit: "in",
-      },
       metric: {
         length: 55.0,
         width: 40.0,
@@ -677,41 +689,28 @@ export const airlines: Airline[] = [
     id: "cathay-pacific",
     country: "China (HK)",
     name: "Cathay Pacific",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://flights.cathaypacific.com/en_CA/baggage/baggage-calculator.html",
     carryOn: {
       imperial: {
-        length: 22.0,
-        width: 14.0,
-        height: 9.0,
+        isLinear: true,
+        linearValue: 62.0,
         unit: "in",
       },
       metric: {
-        length: 56.0,
-        width: 36.0,
-        height: 23.0,
+        isLinear: true,
+        linearValue: 158.0,
         unit: "cm",
       },
     },
-    personalItem: {
-      imperial: {
-        length: 16.0,
-        width: 12.0,
-        height: 6.0,
-        unit: "in",
-      },
-      metric: {
-        length: 40.0,
-        width: 30.0,
-        height: 15.0,
-        unit: "cm",
-      },
-    },
+    personalItem: {},
   },
   {
     id: "hong-kong-airlines",
     country: "China (HK)",
     name: "Hong Kong Airlines",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://www.hongkongairlines.com/en_HK/fly-with-us/baggage/handcarry",
     carryOn: {
       imperial: {
         length: 22.0,
@@ -731,14 +730,9 @@ export const airlines: Airline[] = [
     id: "fiji-airways",
     country: "Fiji",
     name: "Fiji Airways",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://www.fijiairways.com/en-ca/manage/baggage-allowances",
     carryOn: {
-      imperial: {
-        length: 21.7,
-        width: 15.7,
-        height: 9.0,
-        unit: "in",
-      },
       metric: {
         length: 55.0,
         width: 40.0,
@@ -751,12 +745,13 @@ export const airlines: Airline[] = [
     id: "finnair",
     country: "Finland",
     name: "Finnair",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://www.finnair.com/ca-en/baggage-on-finnair-flights/carry-on-baggage",
     carryOn: {
       imperial: {
-        length: 22.0,
-        width: 16.0,
-        height: 9.0,
+        length: 21.7,
+        width: 15.7,
+        height: 9.1,
         unit: "in",
       },
       metric: {
@@ -768,9 +763,9 @@ export const airlines: Airline[] = [
     },
     personalItem: {
       imperial: {
-        length: 16.0,
-        width: 12.0,
-        height: 6.0,
+        length: 15.7,
+        width: 11.8,
+        height: 5.9,
         unit: "in",
       },
       metric: {
@@ -785,12 +780,13 @@ export const airlines: Airline[] = [
     id: "air-france",
     country: "France",
     name: "Air France",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://wwws.airfrance.ca/en/information/bagages/bagage-cabine-soute",
     carryOn: {
       imperial: {
-        length: 22.0,
-        width: 14.0,
-        height: 10.0,
+        length: 21.7,
+        width: 13.8,
+        height: 9.9,
         unit: "in",
       },
       metric: {
@@ -819,14 +815,9 @@ export const airlines: Airline[] = [
     id: "condor",
     country: "Germany",
     name: "Condor",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl:
+      "https://www.condor.com/eu/flight-preparation/baggage-and-animals/carry-on.jsp",
     carryOn: {
-      imperial: {
-        length: 22.0,
-        width: 16.0,
-        height: 8.0,
-        unit: "in",
-      },
       metric: {
         length: 55.0,
         width: 40.0,
@@ -835,12 +826,6 @@ export const airlines: Airline[] = [
       },
     },
     personalItem: {
-      imperial: {
-        length: 15.7,
-        width: 11.8,
-        height: 3.9,
-        unit: "in",
-      },
       metric: {
         length: 40.0,
         width: 30.0,
@@ -853,14 +838,8 @@ export const airlines: Airline[] = [
     id: "lufthansa",
     country: "Germany",
     name: "Lufthansa",
-    baggagePolicyUrl: "",
+    baggagePolicyUrl: "https://www.lufthansa.com/gr/en/carry-on-baggage",
     carryOn: {
-      imperial: {
-        length: 22.0,
-        width: 16.0,
-        height: 9.0,
-        unit: "in",
-      },
       metric: {
         length: 55.0,
         width: 40.0,
@@ -869,12 +848,6 @@ export const airlines: Airline[] = [
       },
     },
     personalItem: {
-      imperial: {
-        length: 15.7,
-        width: 11.8,
-        height: 3.9,
-        unit: "in",
-      },
       metric: {
         length: 40.0,
         width: 30.0,
