@@ -518,10 +518,6 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
-    personalItem: {
-      imperial: null,
-      metric: null,
-    },
   },
   {
     id: "beijing-capital-airlines",
@@ -541,10 +537,6 @@ export const airlines: Airline[] = [
         height: 20.0,
         unit: "cm",
       },
-    },
-    personalItem: {
-      imperial: null,
-      metric: null,
     },
   },
   {
@@ -566,10 +558,6 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
-    personalItem: {
-      imperial: null,
-      metric: null,
-    },
   },
   {
     id: "china-southern",
@@ -590,10 +578,6 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
-    personalItem: {
-      imperial: null,
-      metric: null,
-    },
   },
   {
     id: "china-southern---xiamen-airlines",
@@ -613,10 +597,6 @@ export const airlines: Airline[] = [
         height: 20.0,
         unit: "cm",
       },
-    },
-    personalItem: {
-      imperial: null,
-      metric: null,
     },
   },
   {
@@ -658,10 +638,6 @@ export const airlines: Airline[] = [
     country: "China",
     name: "Hainan Airlines - Global",
     baggagePolicyUrl: "",
-    carryOn: {
-      imperial: null,
-      metric: null,
-    },
     personalItem: {
       imperial: {
         length: 12.0,
@@ -695,10 +671,6 @@ export const airlines: Airline[] = [
         height: 20.0,
         unit: "cm",
       },
-    },
-    personalItem: {
-      imperial: null,
-      metric: null,
     },
   },
   {
@@ -754,10 +726,6 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
-    personalItem: {
-      imperial: null,
-      metric: null,
-    },
   },
   {
     id: "fiji-airways",
@@ -777,10 +745,6 @@ export const airlines: Airline[] = [
         height: 23.0,
         unit: "cm",
       },
-    },
-    personalItem: {
-      imperial: null,
-      metric: null,
     },
   },
   {
@@ -931,10 +895,6 @@ export const airlines: Airline[] = [
         height: 9.8,
         unit: "in",
       },
-      metric: null,
-    },
-    personalItem: {
-      imperial: null,
       metric: null,
     },
   },
@@ -1093,10 +1053,6 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
-    personalItem: {
-      imperial: null,
-      metric: null,
-    },
   },
   {
     id: "all-nippon-(ana)---under-100-seats",
@@ -1117,24 +1073,12 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
-    personalItem: {
-      imperial: null,
-      metric: null,
-    },
   },
   {
     id: "japan-airlines",
     country: "Japan",
     name: "Japan Airlines",
     baggagePolicyUrl: "",
-    carryOn: {
-      imperial: null,
-      metric: null,
-    },
-    personalItem: {
-      imperial: null,
-      metric: null,
-    },
   },
   {
     id: "japan-airlines---zipair-tokyo",
@@ -1223,10 +1167,6 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
-    personalItem: {
-      imperial: null,
-      metric: null,
-    },
   },
   {
     id: "klm",
@@ -1267,14 +1207,6 @@ export const airlines: Airline[] = [
     country: "New Zealand",
     name: "Air New Zealand",
     baggagePolicyUrl: "",
-    carryOn: {
-      imperial: null,
-      metric: null,
-    },
-    personalItem: {
-      imperial: null,
-      metric: null,
-    },
   },
   {
     id: "philippine-airlines",
@@ -1329,20 +1261,12 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
-    personalItem: {
-      imperial: null,
-      metric: null,
-    },
   },
   {
     id: "singapore-airlines",
     country: "Singapore",
     name: "Singapore Airlines",
     baggagePolicyUrl: "",
-    carryOn: {
-      imperial: null,
-      metric: null,
-    },
     personalItem: {
       imperial: {
         length: 15.7,
@@ -1587,10 +1511,6 @@ export const airlines: Airline[] = [
     country: "UK",
     name: "EasyJet",
     baggagePolicyUrl: "",
-    carryOn: {
-      imperial: null,
-      metric: null,
-    },
     personalItem: {
       imperial: {
         length: 17.7,
@@ -1624,10 +1544,6 @@ export const airlines: Airline[] = [
         height: 22.9,
         unit: "cm",
       },
-    },
-    personalItem: {
-      imperial: null,
-      metric: null,
     },
   },
   {
@@ -1716,10 +1632,6 @@ export const airlines: Airline[] = [
         height: 23.0,
         unit: "cm",
       },
-    },
-    personalItem: {
-      imperial: null,
-      metric: null,
     },
   },
   {
