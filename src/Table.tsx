@@ -1,4 +1,3 @@
-import React from "react";
 import { DataGrid, type GridRenderCellParams } from "@mui/x-data-grid";
 import { airlines } from "./data";
 import type { Airline, Dimension } from "./types";
@@ -59,7 +58,7 @@ const columns = [
     field: "carryOn.imperial",
     headerName: "Imperial",
     width: 150,
-    valueGetter: (value: Dimension, row: Airline) =>
+    valueGetter: (_: Dimension, row: Airline) =>
       formatDimension(row.carryOn?.imperial),
     renderCell: (params: GridRenderCellParams<any, Airline>) =>
       renderCellWithSourceUrl(params.row.carryOn?.imperial, params.row),
@@ -68,7 +67,7 @@ const columns = [
     field: "carryOn.metric",
     headerName: "Metric",
     width: 180,
-    valueGetter: (value: Dimension, row: Airline) =>
+    valueGetter: (_: Dimension, row: Airline) =>
       formatDimension(row.carryOn?.metric),
     renderCell: (params: GridRenderCellParams<any, Airline>) =>
       renderCellWithSourceUrl(params.row.carryOn?.metric, params.row),
@@ -77,7 +76,7 @@ const columns = [
     field: "personalItem.imperial",
     headerName: "Imperial",
     width: 150,
-    valueGetter: (value: Dimension, row: Airline) =>
+    valueGetter: (_: Dimension, row: Airline) =>
       formatDimension(row.personalItem?.imperial),
     renderCell: (params: GridRenderCellParams<any, Airline>) =>
       renderCellWithSourceUrl(params.row.personalItem?.imperial, params.row),
@@ -86,7 +85,7 @@ const columns = [
     field: "personalItem.metric",
     headerName: "Metric",
     width: 150,
-    valueGetter: (value: Dimension, row: Airline) =>
+    valueGetter: (_: Dimension, row: Airline) =>
       formatDimension(row.personalItem?.metric),
     renderCell: (params: any) =>
       renderCellWithSourceUrl(params.row.personalItem?.metric, params.row),
