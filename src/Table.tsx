@@ -8,6 +8,17 @@ import type { Airline, Dimension } from "./types";
 // const rowCount = airlines.length;
 // const totalHeight = singleRowHeight * rowCount + headerHeight;
 
+const columnWidths = {
+  country: 130,
+  name: 180,
+  carryOnImperial: 150,
+  carryOnMetric: 180,
+  personalItemImperial: 150,
+  personalItemMetric: 150,
+};
+
+const tableWidth = Object.values(columnWidths).reduce((acc, width) => acc + width, 0);
+
 const formatDimension = (dimension: Dimension | undefined): string => {
   if (!dimension) return "-";
   if (dimension.isLinear) {
@@ -35,11 +46,11 @@ const renderCellWithSourceUrl = (value: Dimension, row: Airline) => {
 };
 
 const columns = [
-  { field: "country", headerName: "Country", width: 130 },
+  { field: "country", headerName: "Country", width: columnWidths.country },
   {
     field: "name",
     headerName: "Airline",
-    width: 180,
+    width: columnWidths.name,
     renderCell: (params: any) => {
       
       const policyUrl = params.row.baggagePolicyUrl;
@@ -60,7 +71,7 @@ const columns = [
   {
     field: "carryOn.imperial",
     headerName: "Imperial",
-    width: 150,
+    width: columnWidths.carryOnImperial,
     valueGetter: (_: Dimension, row: Airline) =>
       formatDimension(row.carryOn?.imperial),
     renderCell: (params: GridRenderCellParams<any, Airline>) =>
@@ -69,7 +80,7 @@ const columns = [
   {
     field: "carryOn.metric",
     headerName: "Metric",
-    width: 180,
+    width: columnWidths.carryOnMetric,
     valueGetter: (_: Dimension, row: Airline) =>
       formatDimension(row.carryOn?.metric),
     renderCell: (params: GridRenderCellParams<any, Airline>) =>
@@ -78,7 +89,7 @@ const columns = [
   {
     field: "personalItem.imperial",
     headerName: "Imperial",
-    width: 150,
+    width: columnWidths.personalItemImperial,
     valueGetter: (_: Dimension, row: Airline) =>
       formatDimension(row.personalItem?.imperial),
     renderCell: (params: GridRenderCellParams<any, Airline>) =>
@@ -87,7 +98,7 @@ const columns = [
   {
     field: "personalItem.metric",
     headerName: "Metric",
-    width: 150,
+    width: columnWidths.personalItemMetric,
     valueGetter: (_: Dimension, row: Airline) =>
       formatDimension(row.personalItem?.metric),
     renderCell: (params: any) =>
@@ -111,13 +122,32 @@ const columnGroupingModel = [
 
 const Table = () => {
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: tableWidth }}>
       <DataGrid
         rows={airlines}
         columns={columns}
         columnGroupingModel={columnGroupingModel}
         hideFooterPagination={true}
         hideFooterSelectedRowCount
+        sx={{
+          fontSize: "14px",
+          "& .MuiDataGrid-columnHeaders": {
+            backgroundColor: "#f5f5f5",
+            color: "#333",
+            fontWeight: "bold",
+          },
+          "& .MuiDataGrid-columnHeader": {
+            // border: "solid 1px #e0e0e0",
+          },
+          "& .MuiDataGrid-row": {
+            "&:nth-child(even)": {
+              backgroundColor: "#fafafa",
+            },
+          },
+          "& .MuiDataGrid-row:hover": {
+            backgroundColor: "#fafafa",
+          },
+        }}
       />
     </div>
   );

@@ -24,5 +24,6 @@ export interface Airline {
   specialNotes?: string[];
   officialWebsite?: string;
   baggagePolicyUrl?: string;
+  updatedAt?: Date;
 }
 

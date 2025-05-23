@@ -14,6 +14,7 @@ export const airlines: Airline[] = [
       imperial: { length: 15.7, width: 11.8, height: 3.9, unit: "in" },
       metric: { length: 40.0, width: 30.0, height: 10.0, unit: "cm" },
     },
+    updatedAt: undefined
   },
   {
     id: "qantas",
@@ -25,6 +26,7 @@ export const airlines: Airline[] = [
       imperial: { length: 22.0, width: 14.0, height: 9.0, unit: "in" },
       metric: { length: 56.0, width: 36.0, height: 23.0, unit: "cm" },
     },
+    updatedAt: undefined
   },
   {
     id: "brussels-airlines",
@@ -40,6 +42,7 @@ export const airlines: Airline[] = [
       imperial: { length: 15.7, width: 11.8, height: 3.9, unit: "in" },
       metric: { length: 40.0, width: 30.0, height: 10.0, unit: "cm" },
     },
+    updatedAt: undefined
   },
   {
     id: "british-airways",
@@ -55,6 +58,7 @@ export const airlines: Airline[] = [
       imperial: { length: 15.7, width: 11.8, height: 5.9, unit: "in" },
       metric: { length: 40.0, width: 30.0, height: 15.0, unit: "cm" },
     },
+    updatedAt: undefined
   },
   {
     id: "air-canada",
@@ -90,6 +94,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   // {
   //   id: "air-canada-jazz-aviation",
@@ -192,6 +197,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "air-north---boeing-737-routes",
@@ -226,6 +232,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "air-transat",
@@ -261,6 +268,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "central-mountain-air",
@@ -295,6 +303,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "flair-airlines",
@@ -329,6 +338,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "pacific-coastal-airlines",
@@ -363,6 +373,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "porter-airlines",
@@ -398,6 +409,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "westjet---encore",
@@ -432,6 +444,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "westjet---sunwing-airlines",
@@ -466,6 +479,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "westjet-airlines",
@@ -500,6 +514,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "air-china",
@@ -520,6 +535,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "beijing-capital-airlines",
@@ -541,6 +557,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "china-eastern",
@@ -562,6 +579,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "china-southern",
@@ -583,6 +601,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "china-southern---xiamen-airlines",
@@ -602,6 +621,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "hainan-airlines---domestic",
@@ -637,6 +657,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "hainan-airlines---global",
@@ -670,6 +691,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "sichuan-airlines",
@@ -684,6 +706,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "cathay-pacific",
@@ -725,6 +748,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "fiji-airways",
@@ -740,6 +764,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "finnair",
@@ -775,6 +800,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "air-france",
@@ -810,6 +836,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "condor",
@@ -833,6 +860,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "lufthansa",
@@ -855,6 +883,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "aegean-airlines",
@@ -869,6 +898,7 @@ export const airlines: Airline[] = [
         unit: "in",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "icelandair",
@@ -903,6 +933,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "air-india",
@@ -937,6 +968,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "el-al-airlines",
@@ -971,6 +1003,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "ita-airways",
@@ -1005,6 +1038,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "all-nippon-(ana)---100+-seats",
@@ -1025,6 +1059,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "all-nippon-(ana)---under-100-seats",
@@ -1045,6 +1080,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "japan-airlines",
@@ -1085,6 +1121,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "korean-air",
@@ -1119,6 +1156,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "aerom\u00e9xico",
@@ -1139,6 +1177,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "klm",
@@ -1173,6 +1212,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "air-new-zealand",
@@ -1213,6 +1253,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "aeroflot",
@@ -1233,6 +1274,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "singapore-airlines",
@@ -1253,6 +1295,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "iberia-airlines",
@@ -1287,6 +1330,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "vueling-airlines",
@@ -1321,6 +1365,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "scandinavian-airlines",
@@ -1355,6 +1400,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "swiss-air",
@@ -1389,6 +1435,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "china-airlines",
@@ -1409,6 +1456,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "eva-airways",
@@ -1443,6 +1491,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "turkish-airlines",
@@ -1477,6 +1526,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "easyjet",
@@ -1497,6 +1547,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "alaska-airlines",
@@ -1517,6 +1568,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "alaska-airlines---horizon-air",
@@ -1551,6 +1603,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "american",
@@ -1585,6 +1638,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "delta-air-lines",
@@ -1605,6 +1659,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "jetblue-airways",
@@ -1639,6 +1694,7 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
   {
     id: "united-airlines",
@@ -1673,5 +1729,6 @@ export const airlines: Airline[] = [
         unit: "cm",
       },
     },
+    updatedAt: undefined
   },
 ];

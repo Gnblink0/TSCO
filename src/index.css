@@ -1,2 +1,17 @@
 @import "tailwindcss";
 
+body {
+  @apply bg-gray-50;
+}
+
+@theme {
+  --color-primary: #0682C2;
+  --color-primary-100:#e1f2fd;
+  --color-primary-200:#bbe6fc;
+  --color-primary-300:#80d2f9;
+  --color-primary-400:#3cbbf4;
+  --color-primary-500:#12a3e5;
+  --color-primary-600:#0682c2;
+
+  --color-secondary: #80C232;
+}
