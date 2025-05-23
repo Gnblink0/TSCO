@@ -19,8 +19,8 @@ export interface Airline {
   id: string;
   country: string;
   name: string;
-  carryOn: BaggageSize;
-  personalItem: BaggageSize;
+  carryOn?: BaggageSize;
+  personalItem?: BaggageSize;
   specialNotes?: string[];
   officialWebsite?: string;
   baggagePolicyUrl?: string;
