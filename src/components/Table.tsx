@@ -1,6 +1,8 @@
 import { DataGrid, type GridRenderCellParams } from "@mui/x-data-grid";
-import type { Airline, Dimension } from "./types";
-import { columnWidths, tableWidth } from "./TableUtils";
+import type { Airline, Dimension } from "../types";
+import { columnWidths, tableWidth } from "../TableUtils";
+import { useState } from "react";
+import InfoModal from "./InfoModal";
 
 // calculate total height of the table
 // const singleRowHeight = 52;
@@ -100,7 +102,7 @@ const columnGroupingModel = [
     children: [{ field: "carryOn.imperial" }, { field: "carryOn.metric" }],
   },
   {
-    groupId: "Personal",
+    groupId: "Personal Item",
     children: [
       { field: "personalItem.imperial" },
       { field: "personalItem.metric" },
@@ -113,6 +115,14 @@ interface TableProps {
 }
 
 const Table = ({ data }: TableProps) => {
+  const [selectedRow, setSelectedRow] = useState<Airline | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleRowClick = (params: any) => {
+    setSelectedRow(params.row);
+    setIsModalOpen(true);
+  };
+
   return (
     <div style={{ width: tableWidth }}>
       <div className="flex justify-between items-center bg-primary-100 p-2 p text-primary rounded-t-lg">
@@ -125,6 +135,7 @@ const Table = ({ data }: TableProps) => {
         columnGroupingModel={columnGroupingModel}
         hideFooter
         autoHeight
+        onRowClick={handleRowClick}
         sx={{
           fontSize: "14px",
           "& .MuiDataGrid-columnHeaders": {
@@ -136,6 +147,7 @@ const Table = ({ data }: TableProps) => {
             // border: "solid 1px #e0e0e0",
           },
           "& .MuiDataGrid-row": {
+            cursor: "pointer",
             "&:nth-child(even)": {
               backgroundColor: "#fafafa",
             },
@@ -145,6 +157,7 @@ const Table = ({ data }: TableProps) => {
           },
         }}
       />
+      <InfoModal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };

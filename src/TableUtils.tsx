@@ -1,5 +1,5 @@
 export const columnWidths = {
-  country: 130,
+  country: 100,
   name: 180,
   carryOnImperial: 150,
   carryOnMetric: 180,

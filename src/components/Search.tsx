@@ -1,7 +1,7 @@
 import { TextField, InputAdornment, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-import { tableWidth } from "./TableUtils";
+import { tableWidth } from "../TableUtils";
 import { useState, useEffect, useCallback } from "react";
 
 interface SearchProps {

@@ -1,5 +1,6 @@
-import Search from "./Search";
-import Table from "./Table";
+import Search from "./components/Search";
+import Table from "./components/Table";
+import Footer from "./section/Footer";
 import { useState } from "react";
 import { airlines } from "./data";
 import type { Airline } from "./types";
@@ -31,6 +32,7 @@ const App = () => {
       </div>
       <Search onSearch={handleSearch} />
       <Table data={filteredAirlines} />
+      <Footer />
     </div>
   );
 };
