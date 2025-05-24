@@ -1,8 +1,9 @@
 import { DataGrid, type GridRenderCellParams } from "@mui/x-data-grid";
 import type { Airline, Dimension } from "../types";
-import { columnWidths, tableWidth } from "../TableUtils";
+import { columnWidths, formatDimension, tableWidth } from "../TableUtils";
 import { useState } from "react";
 import InfoModal from "./InfoModal";
+
 
 // calculate total height of the table
 // const singleRowHeight = 52;
@@ -10,13 +11,7 @@ import InfoModal from "./InfoModal";
 // const rowCount = airlines.length;
 // const totalHeight = singleRowHeight * rowCount + headerHeight;
 
-const formatDimension = (dimension: Dimension | undefined): string => {
-  if (!dimension) return "-";
-  if (dimension.isLinear) {
-    return `${dimension.linearValue} ${dimension.unit} in Linear`;
-  }
-  return `${dimension.length} x ${dimension.width} x ${dimension.height} ${dimension.unit}`;
-};
+
 
 const renderCellWithSourceUrl = (value: Dimension, row: Airline) => {
   const text = formatDimension(value);
@@ -115,12 +110,18 @@ interface TableProps {
 }
 
 const Table = ({ data }: TableProps) => {
-  const [selectedRow, setSelectedRow] = useState<Airline | null>(null);
+  const [selectedRow, setSelectedRow] = useState<Airline | undefined>(undefined);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleRowClick = (params: any) => {
     setSelectedRow(params.row);
     setIsModalOpen(true);
+    console.log(params.row);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedRow(null);
   };
 
   return (
@@ -157,7 +158,13 @@ const Table = ({ data }: TableProps) => {
           },
         }}
       />
-      <InfoModal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {selectedRow && (
+        <InfoModal
+          open={isModalOpen}
+          onClose={handleModalClose}
+          airline={selectedRow}
+        />
+      )}
     </div>
   );
 };
