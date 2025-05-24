@@ -121,7 +121,7 @@ const Table = ({ data }: TableProps) => {
 
   const handleModalClose = () => {
     setIsModalOpen(false);
-    setSelectedRow(null);
+    setSelectedRow(undefined);
   };
 
   return (

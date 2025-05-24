@@ -1,8 +1,9 @@
-import { Modal, Box, Button } from "@mui/material";
+import { Modal, Box, Button, TextField } from "@mui/material";
 import type { Airline } from "../types";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import InfoCard from "./InfoCard";
 import { formatDimension } from "../TableUtils";
+import { useState } from "react";
 
 interface InfoModalProps {
   open: boolean;
@@ -11,6 +12,38 @@ interface InfoModalProps {
 }
 
 const InfoModal = ({ open, onClose, airline }: InfoModalProps) => {
+  const [isEditButtonClicked, setIsEditButtonClicked] = useState(false);
+  const [isEditModal, setIsEditModal] = useState(false);
+  const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [country, setCountry] = useState(airline.country);
+
+  const handleEditCountry = (value: string) => {
+    setCountry(value);
+  };
+
+  const handleEditButtonClick = () => {
+    setIsEditButtonClicked(true);
+  };
+
+  const handlePasswordSubmit = () => {
+    const staffPassword = import.meta.env.VITE_STAFF_PASSWORD;
+    if (password === staffPassword) {
+      setIsEditModal(true);
+      setIsEditButtonClicked(false);
+      setPassword("");
+      setPasswordError("");
+    } else {
+      setPasswordError("Incorrect password");
+    }
+  };
+
+  const handleCancelEdit = () => {
+    setIsEditButtonClicked(false);
+    setPassword("");
+    setPasswordError("");
+  };
+
   return (
     <Modal open={open} onClose={onClose} aria-labelledby="info-modal-title">
       <Box
@@ -41,11 +74,50 @@ const InfoModal = ({ open, onClose, airline }: InfoModalProps) => {
             </a>
           )}
         </div>
+        {isEditButtonClicked && (
+          <div className="w-full h-full bg-amber-100 rounded-md p-4 mb-6">
+            <h2 className="text-lg font-semibold mb-2">🔒 Staff Edit Mode</h2>
+            <div className="flex flex-col gap-4">
+              <TextField
+                fullWidth
+                label="Password"
+                type="password"
+                size="small"
+                variant="standard"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                error={!!passwordError}
+                helperText={passwordError}
+                onKeyPress={(e) => {
+                  if (e.key === "Enter") {
+                    handlePasswordSubmit();
+                  }
+                }}
+              />
+              <div className="flex justify-end gap-2">
+                <Button
+                  variant="text"
+                  color="inherit"
+                  onClick={handleCancelEdit}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handlePasswordSubmit}
+                >
+                  Verify
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
         {/* content */}
         <div className="flex flex-col gap-4">
           {/* basic info */}
           <div className="flex justify-between gap-4">
-            <InfoCard label="Country" value={airline.country} />
+            <InfoCard label="Country" value={airline.country} isEdit={isEditModal} onEdit={handleEditCountry} />
             <InfoCard
               label="Last Updated"
               value={
@@ -98,9 +170,7 @@ const InfoModal = ({ open, onClose, airline }: InfoModalProps) => {
             <Button
               variant="contained"
               color="primary"
-              onClick={() => {
-                // TODO: open edit modal
-              }}
+              onClick={handleEditButtonClick}
             >
               Edit
             </Button>
