@@ -44,6 +44,10 @@ const InfoModal = ({ open, onClose, airline }: InfoModalProps) => {
     setPasswordError("");
   };
 
+  const handleSaveEdit = () => {
+    setIsEditModal(false);
+  };
+
   return (
     <Modal open={open} onClose={onClose} aria-labelledby="info-modal-title">
       <Box
@@ -117,7 +121,12 @@ const InfoModal = ({ open, onClose, airline }: InfoModalProps) => {
         <div className="flex flex-col gap-4">
           {/* basic info */}
           <div className="flex justify-between gap-4">
-            <InfoCard label="Country" value={airline.country} isEdit={isEditModal} onEdit={handleEditCountry} />
+            <InfoCard
+              label="Country"
+              value={country}
+              isEdit={isEditModal}
+              onEdit={handleEditCountry}
+            />
             <InfoCard
               label="Last Updated"
               value={
@@ -167,13 +176,23 @@ const InfoModal = ({ open, onClose, airline }: InfoModalProps) => {
             <Button variant="text" color="inherit" onClick={onClose}>
               Close
             </Button>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleEditButtonClick}
-            >
-              Edit
-            </Button>
+            {isEditModal ? (
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSaveEdit}
+              >
+                Save
+              </Button>
+            ) : (
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleEditButtonClick}
+              >
+                Edit
+              </Button>
+            )}
           </div>
         </div>
       </Box>
