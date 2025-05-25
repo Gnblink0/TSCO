@@ -2,7 +2,8 @@ import { TextField, InputAdornment, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import { tableWidth } from "../TableUtils";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
+import { debounce } from "lodash";
 
 interface SearchProps {
   onSearch: (searchTerm: string) => void;
@@ -10,27 +11,27 @@ interface SearchProps {
 
 const Search = ({ onSearch }: SearchProps) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [debouncedTerm, setDebouncedTerm] = useState(searchTerm);
 
-  // set debounced term
+  const debouncedSearch = useMemo(
+    () =>
+      debounce((term: string) => {
+        onSearch(term);
+      }, 300),
+    [onSearch]
+  );
+
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebouncedTerm(searchTerm);
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [searchTerm]);
-
-  // only trigger search when debounced term changes
-  useEffect(() => {
-    onSearch(debouncedTerm);
-  }, [debouncedTerm, onSearch]);
+    return () => {
+      debouncedSearch.cancel();
+    };
+  }, [debouncedSearch]);
 
   const handleSearchChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       setSearchTerm(event.target.value);
+      debouncedSearch(event.target.value);
     },
-    []
+    [debouncedSearch]
   );
 
   const handleClear = () => {

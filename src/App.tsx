@@ -1,16 +1,15 @@
 import Search from "./components/Search";
 import Table from "./components/Table";
 import Footer from "./section/Footer";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { airlines } from "./data";
 import type { Airline } from "./types";
 import StaffModeBar from "./components/StaffModeBar";
 
-
 const App = () => {
   const [filteredAirlines, setFilteredAirlines] = useState<Airline[]>(airlines);
 
-  const handleSearch = (searchTerm: string) => {
+  const handleSearch = useCallback((searchTerm: string) => {
     const filtered = airlines.filter((airline) => {
       const searchLower = searchTerm.toLowerCase();
       return (
@@ -19,7 +18,7 @@ const App = () => {
       );
     });
     setFilteredAirlines(filtered);
-  };
+  }, []);
 
   return (
     <div className="flex flex-col items-center h-screen">
