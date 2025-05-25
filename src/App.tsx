@@ -4,6 +4,8 @@ import Footer from "./section/Footer";
 import { useState } from "react";
 import { airlines } from "./data";
 import type { Airline } from "./types";
+import StaffModeBar from "./components/StaffModeBar";
+
 
 const App = () => {
   const [filteredAirlines, setFilteredAirlines] = useState<Airline[]>(airlines);
@@ -21,6 +23,7 @@ const App = () => {
 
   return (
     <div className="flex flex-col items-center h-screen">
+      <StaffModeBar />
       <div className="py-10 mb-10 w-full flex flex-col items-center justify-center bg-gradient-to-r from-primary to-secondary">
         <h1 className="text-3xl font-bold text-white mb-3">
           YVR Carry-On Baggage Allowances

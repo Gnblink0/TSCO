@@ -4,6 +4,7 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import InfoCard from "./InfoCard";
 import { formatDimension } from "../TableUtils";
 import { useState } from "react";
+import { authUtils } from "../utils/authUtils";
 
 interface InfoModalProps {
   open: boolean;
@@ -16,6 +17,7 @@ const InfoModal = ({ open, onClose, airline }: InfoModalProps) => {
   const [isEditModal, setIsEditModal] = useState(false);
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const [country, setCountry] = useState(airline.country);
 
   const handleEditCountry = (value: string) => {
@@ -33,6 +35,11 @@ const InfoModal = ({ open, onClose, airline }: InfoModalProps) => {
       setIsEditButtonClicked(false);
       setPassword("");
       setPasswordError("");
+      authUtils.setAuth();
+      setSuccessMessage(
+        "✅ Staff mode verified! You can edit for the next 1 hour."
+      );
+      setTimeout(() => setSuccessMessage(""), 3000);
     } else {
       setPasswordError("Incorrect password");
     }
@@ -78,6 +85,11 @@ const InfoModal = ({ open, onClose, airline }: InfoModalProps) => {
             </a>
           )}
         </div>
+        {successMessage && (
+          <div className="w-full bg-green-100 text-green-700 p-3 rounded-md mb-4">
+            {successMessage}
+          </div>
+        )}
         {isEditButtonClicked && (
           <div className="w-full h-full bg-amber-100 rounded-md p-4 mb-6">
             <h2 className="text-lg font-semibold mb-2">🔒 Staff Edit Mode</h2>
@@ -177,13 +189,13 @@ const InfoModal = ({ open, onClose, airline }: InfoModalProps) => {
               Close
             </Button>
             {isEditModal ? (
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleSaveEdit}
-              >
-                Save
-              </Button>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleSaveEdit}
+                >
+                  Save
+                </Button>
             ) : (
               <Button
                 variant="contained"
